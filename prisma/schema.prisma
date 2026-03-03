@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============ 用户域 ============
+
+model User {
+  id            String   @id @default(cuid())
+  openid        String   @unique
+  unionid       String?
+  nickname      String?
+  avatarUrl     String?
+  currentLevel  Int      @default(1)
+  vipStatus     String   @default("free")
+  status        String   @default("active")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  levelProgress      UserLevelProgress[]
+  sentenceMastery    UserSentenceMastery[]
+  assessments        Assessment[]
+  peerReviews        PeerReview[]
+
+  @@index([openid])
+  @@index([currentLevel])
+}
+
+model UserLevelProgress {
+  id                String   @id @default(cuid())
+  userId            String
+  level             Int
+  totalSentences    Int      @default(20)
+  completedCount    Int      @default(0)
+  masteredCount     Int      @default(0)
+  isPassed          Boolean  @default(false)
+  passedAt          DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, level])
+  @@index([userId])
+}
+
+model UserSentenceMastery {
+  id               String   @id @default(cuid())
+  userId           String
+  sentenceId       String
+  masteryScore     Int      @default(0)
+  lastPracticedAt  DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sentence Sentence @relation(fields: [sentenceId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, sentenceId])
+  @@index([userId])
+}
+
+// ============ 内容域 ============
+
+model Sentence {
+  id        String   @id @default(cuid())
+  level     Int
+  seqNo     Int
+  enText    String
+  zhText    String
+  audioUrl  String?
+  ttsEnabled Boolean @default(true)
+  status    String   @default("active")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userMastery UserSentenceMastery[]
+  peerReviews PeerReview[]
+
+  @@unique([level, seqNo])
+  @@index([level])
+}
+
+// ============ 测评域 ============
+
+model Assessment {
+  id              String   @id @default(cuid())
+  userId          String
+  score           Int
+  questionCount   Int      @default(20)
+  correctCount    Int
+  suggestedLevel  Int
+  confirmedLevel  Int
+  createdAt       DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model PeerReview {
+  id              String   @id @default(cuid())
+  reviewerUserId  String
+  sentenceId      String
+  score           Int
+  comment         String?
+  status          String   @default("pending")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  reviewer User     @relation(fields: [reviewerUserId], references: [id], onDelete: Cascade)
+  sentence Sentence @relation(fields: [sentenceId], references: [id], onDelete: Cascade)
+
+  @@unique([reviewerUserId, sentenceId])
+  @@index([reviewerUserId])
+  @@index([sentenceId])
+}

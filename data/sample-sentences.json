@@ -1,0 +1,284 @@
+{
+  "sentences": [
+    {
+      "level": 1,
+      "seqNo": 1,
+      "enText": "Hello, how are you?",
+      "zhText": "你好，你好吗？",
+      "audioUrl": "https://example.com/audio/level1/001.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 2,
+      "enText": "I'm fine, thank you.",
+      "zhText": "我很好，谢谢你。",
+      "audioUrl": "https://example.com/audio/level1/002.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 3,
+      "enText": "What is your name?",
+      "zhText": "你叫什么名字？",
+      "audioUrl": "https://example.com/audio/level1/003.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 4,
+      "enText": "My name is John.",
+      "zhText": "我叫约翰。",
+      "audioUrl": "https://example.com/audio/level1/004.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 5,
+      "enText": "Nice to meet you.",
+      "zhText": "很高兴认识你。",
+      "audioUrl": "https://example.com/audio/level1/005.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 6,
+      "enText": "Where are you from?",
+      "zhText": "你来自哪里？",
+      "audioUrl": "https://example.com/audio/level1/006.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 7,
+      "enText": "I'm from China.",
+      "zhText": "我来自中国。",
+      "audioUrl": "https://example.com/audio/level1/007.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 8,
+      "enText": "What do you do?",
+      "zhText": "你做什么工作？",
+      "audioUrl": "https://example.com/audio/level1/008.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 9,
+      "enText": "I'm a teacher.",
+      "zhText": "我是一名教师。",
+      "audioUrl": "https://example.com/audio/level1/009.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 10,
+      "enText": "How old are you?",
+      "zhText": "你多大了？",
+      "audioUrl": "https://example.com/audio/level1/010.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 11,
+      "enText": "I'm 25 years old.",
+      "zhText": "我25岁。",
+      "audioUrl": "https://example.com/audio/level1/011.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 12,
+      "enText": "Do you like sports?",
+      "zhText": "你喜欢运动吗？",
+      "audioUrl": "https://example.com/audio/level1/012.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 13,
+      "enText": "Yes, I like basketball.",
+      "zhText": "是的，我喜欢篮球。",
+      "audioUrl": "https://example.com/audio/level1/013.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 14,
+      "enText": "What's your hobby?",
+      "zhText": "你的爱好是什么？",
+      "audioUrl": "https://example.com/audio/level1/014.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 15,
+      "enText": "I enjoy reading books.",
+      "zhText": "我喜欢读书。",
+      "audioUrl": "https://example.com/audio/level1/015.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 16,
+      "enText": "Have you been to London?",
+      "zhText": "你去过伦敦吗？",
+      "audioUrl": "https://example.com/audio/level1/016.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 17,
+      "enText": "No, I haven't.",
+      "zhText": "没有，我没去过。",
+      "audioUrl": "https://example.com/audio/level1/017.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 18,
+      "enText": "Would you like to go?",
+      "zhText": "你想去吗？",
+      "audioUrl": "https://example.com/audio/level1/018.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 19,
+      "enText": "Yes, I would love to.",
+      "zhText": "是的，我很想去。",
+      "audioUrl": "https://example.com/audio/level1/019.mp3"
+    },
+    {
+      "level": 1,
+      "seqNo": 20,
+      "enText": "See you later!",
+      "zhText": "待会见！",
+      "audioUrl": "https://example.com/audio/level1/020.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 1,
+      "enText": "Can you help me?",
+      "zhText": "你能帮我吗？",
+      "audioUrl": "https://example.com/audio/level2/001.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 2,
+      "enText": "Of course, what do you need?",
+      "zhText": "当然可以，你需要什么？",
+      "audioUrl": "https://example.com/audio/level2/002.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 3,
+      "enText": "I need to find the station.",
+      "zhText": "我需要找到车站。",
+      "audioUrl": "https://example.com/audio/level2/003.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 4,
+      "enText": "It's just around the corner.",
+      "zhText": "就在拐角处。",
+      "audioUrl": "https://example.com/audio/level2/004.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 5,
+      "enText": "Thank you very much.",
+      "zhText": "非常感谢你。",
+      "audioUrl": "https://example.com/audio/level2/005.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 6,
+      "enText": "You're welcome.",
+      "zhText": "不客气。",
+      "audioUrl": "https://example.com/audio/level2/006.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 7,
+      "enText": "How much does it cost?",
+      "zhText": "这要多少钱？",
+      "audioUrl": "https://example.com/audio/level2/007.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 8,
+      "enText": "It costs 50 yuan.",
+      "zhText": "要50元。",
+      "audioUrl": "https://example.com/audio/level2/008.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 9,
+      "enText": "That's too expensive.",
+      "zhText": "太贵了。",
+      "audioUrl": "https://example.com/audio/level2/009.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 10,
+      "enText": "Can you give me a discount?",
+      "zhText": "你能给我打折吗？",
+      "audioUrl": "https://example.com/audio/level2/010.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 11,
+      "enText": "I can give you 10% off.",
+      "zhText": "我可以给你打九折。",
+      "audioUrl": "https://example.com/audio/level2/011.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 12,
+      "enText": "That sounds good.",
+      "zhText": "听起来不错。",
+      "audioUrl": "https://example.com/audio/level2/012.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 13,
+      "enText": "I'll take it.",
+      "zhText": "我要了。",
+      "audioUrl": "https://example.com/audio/level2/013.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 14,
+      "enText": "Do you accept credit cards?",
+      "zhText": "你接受信用卡吗？",
+      "audioUrl": "https://example.com/audio/level2/014.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 15,
+      "enText": "Yes, we do.",
+      "zhText": "是的，我们接受。",
+      "audioUrl": "https://example.com/audio/level2/015.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 16,
+      "enText": "Here's my card.",
+      "zhText": "这是我的卡。",
+      "audioUrl": "https://example.com/audio/level2/016.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 17,
+      "enText": "Please enter your PIN.",
+      "zhText": "请输入你的密码。",
+      "audioUrl": "https://example.com/audio/level2/017.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 18,
+      "enText": "Transaction approved.",
+      "zhText": "交易已批准。",
+      "audioUrl": "https://example.com/audio/level2/018.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 19,
+      "enText": "Have a nice day!",
+      "zhText": "祝你有美好的一天！",
+      "audioUrl": "https://example.com/audio/level2/019.mp3"
+    },
+    {
+      "level": 2,
+      "seqNo": 20,
+      "enText": "You too, goodbye!",
+      "zhText": "你也是，再见！",
+      "audioUrl": "https://example.com/audio/level2/020.mp3"
+    }
+  ]
+}
