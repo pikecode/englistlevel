@@ -1,26 +1,64 @@
 import { LearningService } from '@/lib/services/learning.service'
-import { SentenceRepository } from '@/lib/repositories/sentence.repository'
-import { ProgressRepository } from '@/lib/repositories/progress.repository'
-import { UserRepository } from '@/lib/repositories/user.repository'
 
-// Mock repositories
-jest.mock('@/lib/repositories/sentence.repository')
-jest.mock('@/lib/repositories/progress.repository')
-jest.mock('@/lib/repositories/user.repository')
+var mockSentenceRepo: {
+  getSentencesByLevel: jest.Mock
+  getSentenceById: jest.Mock
+}
+
+var mockProgressRepo: {
+  getLevelProgress: jest.Mock
+  createLevelProgress: jest.Mock
+  updateSentenceMastery: jest.Mock
+  getLevelMasteryStats: jest.Mock
+  updateLevelProgress: jest.Mock
+}
+
+var mockUserRepo: {
+  findById: jest.Mock
+  upgradeLevel: jest.Mock
+}
+
+jest.mock('@/lib/repositories/sentence.repository', () => {
+  mockSentenceRepo = {
+    getSentencesByLevel: jest.fn(),
+    getSentenceById: jest.fn(),
+  }
+
+  return {
+    SentenceRepository: jest.fn(() => mockSentenceRepo),
+  }
+})
+
+jest.mock('@/lib/repositories/progress.repository', () => {
+  mockProgressRepo = {
+    getLevelProgress: jest.fn(),
+    createLevelProgress: jest.fn(),
+    updateSentenceMastery: jest.fn(),
+    getLevelMasteryStats: jest.fn(),
+    updateLevelProgress: jest.fn(),
+  }
+
+  return {
+    ProgressRepository: jest.fn(() => mockProgressRepo),
+  }
+})
+
+jest.mock('@/lib/repositories/user.repository', () => {
+  mockUserRepo = {
+    findById: jest.fn(),
+    upgradeLevel: jest.fn(),
+  }
+
+  return {
+    UserRepository: jest.fn(() => mockUserRepo),
+  }
+})
 
 describe('LearningService', () => {
   let service: LearningService
-  let mockSentenceRepo: any
-  let mockProgressRepo: any
-  let mockUserRepo: any
 
   beforeEach(() => {
     jest.clearAllMocks()
-
-    mockSentenceRepo = new SentenceRepository() as jest.Mocked<SentenceRepository>
-    mockProgressRepo = new ProgressRepository() as jest.Mocked<ProgressRepository>
-    mockUserRepo = new UserRepository() as jest.Mocked<UserRepository>
-
     service = new LearningService()
   })
 

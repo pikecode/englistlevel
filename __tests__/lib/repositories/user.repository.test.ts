@@ -1,9 +1,23 @@
 import { UserRepository } from '@/lib/repositories/user.repository'
-import { PrismaClient } from '@prisma/client'
 
-// Mock Prisma
-jest.mock('@prisma/client', () => ({
-  PrismaClient: jest.fn(() => ({
+var mockPrisma: {
+  user: {
+    findUnique: jest.Mock
+    findMany: jest.Mock
+    create: jest.Mock
+    update: jest.Mock
+    count: jest.Mock
+  }
+  userLevelProgress: {
+    count: jest.Mock
+  }
+  userSentenceMastery: {
+    count: jest.Mock
+  }
+}
+
+jest.mock('@prisma/client', () => {
+  mockPrisma = {
     user: {
       findUnique: jest.fn(),
       findMany: jest.fn(),
@@ -17,17 +31,19 @@ jest.mock('@prisma/client', () => ({
     userSentenceMastery: {
       count: jest.fn(),
     },
-  })),
-}))
+  }
+
+  return {
+    PrismaClient: jest.fn(() => mockPrisma),
+  }
+})
 
 describe('UserRepository', () => {
   let repository: UserRepository
-  let mockPrisma: any
 
   beforeEach(() => {
     jest.clearAllMocks()
     repository = new UserRepository()
-    mockPrisma = (PrismaClient as jest.Mock)()
   })
 
   it('should find user by id', async () => {
