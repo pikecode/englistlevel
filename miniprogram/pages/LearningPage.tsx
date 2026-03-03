@@ -9,7 +9,7 @@ import { Modal } from '../components/Modal'
 import styles from './LearningPage.module.css'
 
 export function LearningPage() {
-  const { user } = useAuth()
+  useAuth()
   const { state, setState, updateMastery } = useLearning()
   const [loading, setLoading] = useState(false)
   const [submitting, setSubmitting] = useState(false)

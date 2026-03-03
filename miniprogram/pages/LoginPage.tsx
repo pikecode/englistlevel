@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { wxLogin, getUserProfile } from '../utils/api'
-import { saveToken, saveUserId } from '../utils/storage'
 import { Button } from '../components/Button'
 import styles from './LoginPage.module.css'
 

@@ -2,9 +2,7 @@ import { AssessmentRepository } from '@/lib/repositories/assessment.repository'
 import { SentenceRepository } from '@/lib/repositories/sentence.repository'
 import { ProgressRepository } from '@/lib/repositories/progress.repository'
 import { UserRepository } from '@/lib/repositories/user.repository'
-import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
 const assessmentRepo = new AssessmentRepository()
 const sentenceRepo = new SentenceRepository()
 const progressRepo = new ProgressRepository()

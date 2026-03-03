@@ -1,5 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server'
-
 /**
  * 输入清理工具
  */

@@ -86,7 +86,7 @@ export function clearOldMetrics(maxAge: number = 3600000) {
  * 性能监控装饰器
  */
 export function withPerformanceMonitoring(name: string) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value
 
     descriptor.value = async function (...args: any[]) {

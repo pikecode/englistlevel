@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
 export interface ApiError {
   code: number
@@ -49,7 +49,7 @@ export const Errors = {
 /**
  * 创建错误响应
  */
-export function createErrorResponse(error: any, statusCode: number = 500) {
+export function createErrorResponse(error: any) {
   if (error instanceof AppError) {
     return NextResponse.json(
       {

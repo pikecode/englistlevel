@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { extractTokenFromHeader, verifyToken } from './jwt'
+import { extractTokenFromHeader, verifyToken } from '../utils/jwt'
 
 /**
  * 认证中间件
