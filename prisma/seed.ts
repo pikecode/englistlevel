@@ -1,6 +1,10 @@
 import { PrismaClient } from '@prisma/client'
 import * as fs from 'fs'
 import * as path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const prisma = new PrismaClient()
 
@@ -22,13 +26,16 @@ async function main() {
     })
 
     if (!existing) {
+      // 生成本地音频 URL
+      const audioUrl = `/audio/level${sentence.level}/${String(sentence.seqNo).padStart(3, '0')}.mp3`
+
       await prisma.sentence.create({
         data: {
           level: sentence.level,
           seqNo: sentence.seqNo,
           enText: sentence.enText,
           zhText: sentence.zhText,
-          audioUrl: sentence.audioUrl,
+          audioUrl: audioUrl,
           ttsEnabled: true,
           status: 'active',
         },
