@@ -119,3 +119,38 @@ model PeerReview {
   @@index([reviewerUserId])
   @@index([sentenceId])
 }
+
+// ============ 后台管理域 ============
+
+model AdminUser {
+  id            String   @id @default(cuid())
+  username      String   @unique
+  passwordHash  String
+  roleCode      String   @default("operator")
+  status        String   @default("active")
+  lastLoginAt   DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  operationLogs OperationLog[]
+
+  @@index([username])
+}
+
+model OperationLog {
+  id            String   @id @default(cuid())
+  adminUserId   String
+  module        String
+  action        String
+  targetId      String?
+  beforeJson    String?
+  afterJson     String?
+  ip            String?
+  createdAt     DateTime @default(now())
+
+  admin AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
+
+  @@index([adminUserId])
+  @@index([module])
+  @@index([createdAt])
+}
